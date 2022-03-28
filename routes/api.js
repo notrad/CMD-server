@@ -25,7 +25,7 @@ router.post('/register', AuthController.postRegister);
 
 router.post('/login', AuthController.postLogin);
 
-router.get('/viewallpatientappointments', AppointmentController.viewAllPatientAppointments);
+router.get('/view-all-patient-appointments', AppointmentController.viewAllPatientAppointments);
 
 router.get('/view-prescription-history', PatientsController.viewPrescriptionHistory);
 
