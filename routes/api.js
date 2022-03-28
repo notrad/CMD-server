@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const verifyToken = require('../middleware/verifyToken');
 const AuthController = require('../controllers/authController');
 const AppointmentController = require('../controllers/appointmentsController');
+const PatientsController = require('../controllers/patientsController');
 
 mongoose.connect(process.env.DB_URI, (error) => {
     if (error) {
@@ -25,5 +26,7 @@ router.post('/register', AuthController.postRegister);
 router.post('/login', AuthController.postLogin);
 
 router.get('/viewallpatientappointments', AppointmentController.viewAllPatientAppointments);
+
+router.get('/view-prescription-history', PatientsController.viewPrescriptionHistory);
 
 module.exports = router;
