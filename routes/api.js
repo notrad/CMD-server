@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const verifyToken = require('../middleware/verifyToken');
 const AuthController = require('../controllers/authController');
+const AppointmentController = require('../controllers/appointmentsController');
 
 mongoose.connect(process.env.DB_URI, (error) => {
     if (error) {
@@ -22,5 +23,7 @@ router.get('/login', AuthController.getLogin);
 router.post('/register', AuthController.postRegister);
 
 router.post('/login', AuthController.postLogin);
+
+router.get('/viewallpatientappointments', AppointmentController.viewAllPatientAppointments);
 
 module.exports = router;
