@@ -4,9 +4,11 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const api = require('./routes/api');
+const Database = require('./config/databaseConnection');
+new Database();
 const app = express()
-
 const PORT = process.env.PORT || 3000;
+
 app.use(cors());
 app.use(bodyParser.json())
 app.use('/api',api);
