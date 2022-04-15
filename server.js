@@ -8,8 +8,10 @@ const Database = require('./config/databaseConnection');
 new Database();
 const app = express()
 const PORT = process.env.PORT || 3000;
+const limiter = require('./middleware/rateLimiter');
 
 app.use(cors());
+app.use(limiter);
 app.use(bodyParser.json())
 app.use('/api',api);
 
