@@ -19,7 +19,7 @@ class AuthController {
         this.userData = req.body;
 
         User.findOne({
-            email: this.userData.email
+            email: { $eq: this.userData.email }
         }, (error, user) => {
             if (error) {
                 console.error(error);
