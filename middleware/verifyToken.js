@@ -11,6 +11,6 @@ let verifyToken = (req, res, next) => {
         return res.status(401).send('Unauthorized request');    
       }
       next();
-}
+};
 
 module.exports = verifyToken;

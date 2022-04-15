@@ -13,7 +13,7 @@ class AuthController {
 
     static getLogin = (req, res) => {
         res.status(200).json({message:'GET/ login not implemented'});
-    }
+    };
 
     static postLogin = (req, res) => {
         this.userData = req.body;
@@ -53,11 +53,11 @@ class AuthController {
                 
                 
         });
-    }
+    };
 
     static getRegister = (req, res) => {
         res.status(200).json({message:'GET/ register not implemented'});
-    }
+    };
 
     static postRegister = (req, res) => {
         this.userData = req.body;
@@ -74,7 +74,7 @@ class AuthController {
             });
         });
     
-    }
+    };
 }
 
 
